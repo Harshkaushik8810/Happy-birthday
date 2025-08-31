@@ -187,8 +187,15 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
                     for q_text, ans in st.session_state.answers.items():
                         f.write(f"{q_text}\nAnswer: {ans}\n\n")
                     f.write("\n")
-                st.session_state.quiz_done = True
-                st.rerun()
+
+                # Provide download button
+                with open(filename, "r", encoding="utf-8") as f:
+                    st.download_button(
+                        "📥 Download Saved Answers",
+                        data=f,
+                        file_name="birthday_answers.txt",
+                        mime="text/plain"
+                    )
 
 # ---------- QUIZ SUMMARY ----------
 if st.session_state.quiz_done:
