@@ -12,15 +12,31 @@ SONG_URL = "song.mp3"
 questions = [
     {"q": "🌹 What’s your idea of a perfect date?",
      "options": ["Dinner under the stars", "Movie night with popcorn", "Long drive with music", "Coffee in a cozy café"]},
+
+     {"q": "🎁 What kind of surprise would make you smile the most?",
+    "options": ["Handwritten letter", "Chocolate hamper", "Cute plush toy", "Me doing random rizz or efforts😆"]},
+
     {"q": "🎶 What kind of music would you like on our date?",
      "options": ["Romantic acoustic", "Lo-fi chill vibes", "Bollywood love songs", "Pop hits"]},
+
+     {"q": "😂 If we got lost on a trip, what would you do?",
+    "options": ["Blame Google Maps", "Blame me 😅", "Just enjoy the adventure", "Panic and call mom"]},
+
     {"q": "🍨 Which dessert would make the night sweeter?",
      "options": ["Chocolate cake", "Ice cream", "Cheesecake", "Brownies"]},
-    {"q": "🏞️ Where would you love to end the date?",
-     "options": ["Beach watching the stars", "Rooftop with city lights", "Garden with fairy lights", "Home with cozy vibes"]},
+
+    {"q": "🍕 If I steal your food on the date, what would you do?",
+    "options": ["Feed me anyway", "Steal mine back", "Give death stare 😒", "Order extra"]},
+
+    {"q": "🌆 Where would you love to end the date?",
+    "options": ["Long drive", "Late-night chai stall", "Café with live music", "Home with cozy vibes"]},
+
+    {"q": "🤣 If I sang a super off-key song for you, what would you do?",
+    "options": ["Clap & cheer", "Roast me", "Join in singing worse", "Run away fast"]},
+
 ]
 
-# ---------- PAGE ----------
+# ---------- PAGE -----
 st.set_page_config(page_title="🎉 Birthday Surprise", page_icon="🎂", layout="centered")
 st.title(f"🎂 Happy Birthday, {BIRTHDAY_PERSON}!")
 st.markdown("### 🎈 I got a little surprise for you...")
@@ -153,7 +169,7 @@ The small red object at the center of this image (just above the large spiral ga
 
 # ---------- QUIZ: ONE QUESTION AT A TIME ----------
 if st.session_state.quiz_started and not st.session_state.quiz_done:
-    st.markdown("## 💕 Mini Game: Design Your Perfect Date")
+    st.markdown("## 💕 Mini Game: Choose Answer Wisely")
 
     idx = st.session_state.q_index
     total = len(questions)
@@ -163,9 +179,18 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
     st.caption(f"Question {idx + 1} of {total}")
 
     q = questions[idx]
-    # Use a stable key per question so selection is remembered
-    choice = st.radio(q["q"], q["options"], key=f"radio_{idx}")
+    # Add "Other" option to choices
+    options = q["options"] + ["Other"]
 
+    # Radio button for choice
+    choice = st.radio(q["q"], options, key=f"radio_{idx}")
+
+    # If "Other" is chosen → show text box
+    other_text = ""
+    if choice == "Other":
+        other_text = st.text_input("Your answer:", key=f"other_{idx}")
+
+    # Navigation buttons
     nav1, nav2, nav3 = st.columns([1,1,2])
     with nav1:
         if st.button("⬅ Back", disabled=(idx == 0)):
@@ -174,7 +199,10 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
     with nav2:
         if st.button("Next ➜" if idx < total - 1 else "✅ Finish & Save"):
             # Save/overwrite answer for the current question
-            st.session_state.answers[q["q"]] = choice
+            if choice == "Other" and other_text.strip():
+                st.session_state.answers[q["q"]] = other_text.strip()
+            else:
+                st.session_state.answers[q["q"]] = choice
 
             if idx < total - 1:
                 st.session_state.q_index += 1
@@ -196,6 +224,7 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
                         file_name="birthday_answers.txt",
                         mime="text/plain"
                     )
+
 
 # ---------- QUIZ SUMMARY ----------
 if st.session_state.quiz_done:
