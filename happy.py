@@ -227,6 +227,8 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
                         file_name="birthday_answers.txt",
                         mime="text/plain"
                     )
+                st.balloons()
+                st.session_state.quiz_done = True
 
 
 # ---------- QUIZ SUMMARY ----------
