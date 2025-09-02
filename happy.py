@@ -234,6 +234,7 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
 # ---------- QUIZ SUMMARY ----------
 if st.session_state.quiz_done:
     st.success("💖 Your perfect date choices have been saved forever!")
+    st.success("Download your answers before you leave—and share them with your date buddy!")
     st.markdown("### ✨ Your Answers")
     for q_text, ans in st.session_state.answers.items():
         st.markdown(f"- **{q_text}** — {ans}")
