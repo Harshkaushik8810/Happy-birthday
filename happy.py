@@ -190,7 +190,7 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
 
     # If "Other" is chosen → show text box
     other_text = ""
-    if choice == "Other":
+    if choice == "Other(write your answer)":
         other_text = st.text_input("Your answer:", key=f"other_{idx}")
 
     # Navigation buttons
@@ -202,7 +202,7 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
     with nav2:
         if st.button("Next ➜" if idx < total - 1 else "✅ Finish & Save"):
             # Save/overwrite answer for the current question
-            if choice == "Other" and other_text.strip():
+            if choice == "Other(write your answer)" and other_text.strip():
                 st.session_state.answers[q["q"]] = other_text.strip()
             else:
                 st.session_state.answers[q["q"]] = choice
