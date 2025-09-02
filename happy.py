@@ -19,7 +19,7 @@ questions = [
     {"q": "🎶 What kind of music would you like on our date?",
      "options": ["Romantic acoustic", "Lo-fi chill vibes", "Bollywood love songs", "Pop hits"]},
 
-     {"q": "😂 If we got lost on a trip, what would you do?",
+     {"q": "😜 If we got lost on a trip, what would you do?",
     "options": ["Blame Google Maps", "Blame me 😅", "Just enjoy the adventure", "Panic and call mom"]},
 
     {"q": "🍨 Which dessert would make the night sweeter?",
@@ -33,6 +33,9 @@ questions = [
 
     {"q": "🤣 If I sang a super off-key song for you, what would you do?",
     "options": ["Clap & cheer", "Roast me", "Join in singing worse", "Run away fast"]},
+
+    {"q": "Last any words for me? 👀",
+    "options": []},
 
 ]
 
@@ -180,7 +183,7 @@ if st.session_state.quiz_started and not st.session_state.quiz_done:
 
     q = questions[idx]
     # Add "Other" option to choices
-    options = q["options"] + ["Other"]
+    options = q["options"] + ["Other(write your answer)"]
 
     # Radio button for choice
     choice = st.radio(q["q"], options, key=f"radio_{idx}")
