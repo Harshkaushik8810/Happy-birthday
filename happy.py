@@ -3,8 +3,8 @@ import time
 from datetime import datetime
 import base64
 
-BIRTHDAY_PERSON = "Tanya"
-IMAGE_FILE = "september-3-2019-nebula-n-81.jpg"
+BIRTHDAY_PERSON = "Mahi"
+IMAGE_FILE = "february-13-2019-nebula-sharpless-2-106"
 SONG_URL = "song.mp3"
 
 
@@ -117,7 +117,7 @@ if st.session_state.play_song:
     every laugh is music that my heart could listen to forever,  
     and every moment with you is a memory I never want to let go of.  
 
-    <span class="highlight">💖 Tanya, you’re more than just the most beautiful girl I’ve ever met — you’re my calm when I need peace, my smile when life feels heavy, and my safe space where I can just be “me” with no filters.. You truly have magic in you. 🎨✨</span>  
+    <span class="highlight">💖 Mahi, you’re more than just the most beautiful girl I’ve ever met — you’re my calm when I need peace, my smile when life feels heavy, and my safe space where I can just be “me” with no filters.. You truly have magic in you. 🎨✨</span>  
     There’s something magical about the way you make ordinary days feel extraordinary,  
     and I am endlessly grateful that I get to walk through life with you by my side.  
 
@@ -140,7 +140,7 @@ if st.session_state.play_song:
     <span class="highlight">So here’s to you, my favorite blessing. Thank you for being unapologetically yourself and for letting me be a part of your world.</span>
 
     <span class="highlight">❤️ I kinda like you more than words will ever be able to say…😉 ❤️</span>
-    <span class="highlight">🎂 Happy Birthday, Tanya jiii ❤️</span>  
+    <span class="highlight">🎂 Happy Birthday, Mahi jiii ❤️</span>  
 
     </div>
     """
