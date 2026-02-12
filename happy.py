@@ -79,55 +79,55 @@ if st.session_state.play_song:
 
     st.markdown("## 🎤 Some words for the birthday girl")
     styled_message = f"""
-<style>
-/* Make entire page smoother */
-.main {{
-    background-color: #0e1117;
-}}
+    <style>
+    /* Make entire page smoother */
+    .main {{
+        background-color: #0e1117;
+    }}
 
-/* Birthday card container */
-.birthday-card {{
-    font-family: 'Georgia', serif;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #ffffff;
-    background: linear-gradient(135deg, #1f1c2c, #302b63, #24243e);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    text-align: justify;
-    margin-top: 20px;
-}}
+    /* Birthday card container */
+    .birthday-card {{
+        font-family: 'Georgia', serif;
+        font-size: 20px;
+        line-height: 1.8;
+        color: #ffffff;
+        background: linear-gradient(135deg, #1f1c2c, #302b63, #24243e);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        text-align: justify;
+        margin-top: 20px;
+    }}
 
-/* Highlight lines */
-.highlight {{
-    font-size: 26px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
-    text-align: center;
-    margin: 25px 0;
-}}
-</style>
+    /* Highlight lines */
+    .highlight {{
+        font-size: 26px;
+        font-weight: bold;
+        background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: block;
+        text-align: center;
+        margin: 25px 0;
+    }}
+    </style>
 
-<div class="birthday-card">
-    We’ve only met once, but that one meeting was enough to leave a really positive impression.  
-    There’s something genuinely kind and refreshing about your presence that’s hard to miss.
+    <div class="birthday-card">
+        We’ve only met once, but that one meeting was enough to leave a really positive impression.  
+        There’s something genuinely kind and refreshing about your presence that’s hard to miss.
 
-    <span class="highlight">
-        On your birthday, I just want to wish you happiness that feels light, peaceful, and truly yours. ✨
-    </span>
+        <span class="highlight">
+            On your birthday, I just want to wish you happiness that feels light, peaceful, and truly yours. ✨
+        </span>
 
-    May this year bring you growth, success, good health, and moments that make you proud of how far you’re going.  
-    Keep smiling, keep shining, and keep being exactly who you are.
+        May this year bring you growth, success, good health, and moments that make you proud of how far you’re going.  
+        Keep smiling, keep shining, and keep being exactly who you are.
 
-    <span class="highlight">
-        🎂 Happy Birthday, {BIRTHDAY_PERSON}! 🌸
-    </span>
-</div>
-"""
+        <span class="highlight">
+            🎂 Happy Birthday, {BIRTHDAY_PERSON}! 🌸
+        </span>
+    </div>
+    """
 
     st.markdown(styled_message, unsafe_allow_html=True)
 
