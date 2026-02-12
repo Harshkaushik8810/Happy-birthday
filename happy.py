@@ -111,38 +111,16 @@ if st.session_state.play_song:
     </style>
 
     <div class="birthday-message">
-    From the very first moment we met, you’ve been the brightest part of my world.  
-    Today isn’t just your birthday — it’s a celebration of the most beautiful soul I know.  
-    Every smile of yours feels like sunshine breaking through the clouds,  
-    every laugh is music that my heart could listen to forever,  
-    and every moment with you is a memory I never want to let go of.  
+    We’ve only met once, but that one meeting was enough to leave a really positive impression.  
+    There’s something genuinely kind and refreshing about your presence that’s hard to miss.
 
-    <span class="highlight">💖 Mahi, you’re more than just the most beautiful girl I’ve ever met — you’re my calm when I need peace, my smile when life feels heavy, and my safe space where I can just be “me” with no filters.. You truly have magic in you. 🎨✨</span>  
-    There’s something magical about the way you make ordinary days feel extraordinary,  
-    and I am endlessly grateful that I get to walk through life with you by my side.  
+    <span class="highlight">On your birthday, I just want to wish you happiness that feels light, peaceful, and truly yours. ✨</span>
 
-    You’ve become my inspiration, my comfort, my joy, and honestly my favorite chapter in this crazy story of life. 
-    Sometimes I still can’t believe my luck that I found you — it feels like destiny, like kismat really wanted me to meet you. 
-    And trust me, your hassi echoes in my head even when I’m working, walking, or just lying half asleep — it’s become my favorite sound in the world.
+    May this year bring you growth, success, good health, and moments that make you proud of how far you’re going.  
+    Keep smiling, keep shining, and keep being exactly who you are.
 
-    
-    <span class="highlight">Today isn’t just your birthday, it’s a celebration of you — the kindest, most caring, most irreplaceable soul I know. On this day, I wish for your heart to always stay as happy and light as your smile makes me feel. May your dreams come true, may your days be filled with love and laughter, and may we create countless memories together — from dandiya nights to Holi mornings, and everything in between. 🌸</span>  
-
-    On this day, I wish for you nothing but pure happiness —  
-    the kind that lingers in your heart, lights up your soul, and never fades away.  
-    I hope every dream you’ve ever held close comes true,  
-    and that the years ahead are filled with love, laughter, and moments that take your breath away.  
-
-    Thank you for being unapologetically you —  
-    for your kindness, your strength, your warmth, and your light.  
-    You are rare. You are irreplaceable. You are my favorite blessing.  
-
-    <span class="highlight">So here’s to you, my favorite blessing. Thank you for being unapologetically yourself and for letting me be a part of your world.</span>
-
-    <span class="highlight">❤️ I kinda like you more than words will ever be able to say…😉 ❤️</span>
-    <span class="highlight">🎂 Happy Birthday, Mahi jiii ❤️</span>  
-
-    </div>
+    <span class="highlight">🎂 Happy Birthday, Mahi! 🌸</span>
+</div>
     """
 
     st.markdown(styled_message, unsafe_allow_html=True)
