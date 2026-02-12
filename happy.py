@@ -13,9 +13,6 @@ questions = [
     {"q": "🌹 What’s your idea of a perfect date?",
      "options": ["Dinner under the stars", "Movie night with popcorn", "Long drive with music", "Coffee in a cozy café"]},
 
-     {"q": "🎁 What kind of surprise would make you smile the most?",
-    "options": ["Handwritten letter", "Chocolate hamper", "Cute plush toy", "Me doing random rizz or efforts😆"]},
-
     {"q": "🎶 What kind of music would you like on our date?",
      "options": ["Romantic acoustic", "Lo-fi chill vibes", "Bollywood love songs", "Pop hits"]},
 
@@ -81,47 +78,56 @@ if st.session_state.play_song:
     time.sleep(5)  # Allow some time for the audio to start
 
     st.markdown("## 🎤 Some words for the birthday girl")
-    styled_message = """
-    <style>
-    .birthday-message {
-        font-family: 'Georgia', serif;
-        font-size: 20px;
-        line-height: 1.8;
-        color: #333;
-        background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fffaf0);
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 8px 25px rgba(255, 150, 180, 0.4);
-        text-align: justify;
-    }
+    styled_message = f"""
+<style>
+/* Make entire page smoother */
+.main {{
+    background-color: #0e1117;
+}}
 
-    /* Highlighted special lines */
-    .highlight {
-        font-family: 'Brush Script MT', cursive;
-        font-size: 28px;
-        font-weight: bold;
-        background: linear-gradient(90deg, #ff6f91, #ff9671, #ffb3c6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 2px 2px 8px rgba(255, 120, 160, 0.5);
-        display: block;
-        text-align: center;
-        margin: 20px 0;
-    }
-    </style>
+/* Birthday card container */
+.birthday-card {{
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1f1c2c, #302b63, #24243e);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    text-align: justify;
+    margin-top: 20px;
+}}
 
-    <div class="birthday-message">
+/* Highlight lines */
+.highlight {{
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    text-align: center;
+    margin: 25px 0;
+}}
+</style>
+
+<div class="birthday-card">
     We’ve only met once, but that one meeting was enough to leave a really positive impression.  
     There’s something genuinely kind and refreshing about your presence that’s hard to miss.
 
-    <span class="highlight">On your birthday, I just want to wish you happiness that feels light, peaceful, and truly yours. ✨</span>
+    <span class="highlight">
+        On your birthday, I just want to wish you happiness that feels light, peaceful, and truly yours. ✨
+    </span>
 
     May this year bring you growth, success, good health, and moments that make you proud of how far you’re going.  
     Keep smiling, keep shining, and keep being exactly who you are.
 
-    <span class="highlight">🎂 Happy Birthday, Mahi! 🌸</span>
+    <span class="highlight">
+        🎂 Happy Birthday, {BIRTHDAY_PERSON}! 🌸
+    </span>
 </div>
-    """
+"""
 
     st.markdown(styled_message, unsafe_allow_html=True)
 
