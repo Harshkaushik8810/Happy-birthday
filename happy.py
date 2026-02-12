@@ -4,7 +4,7 @@ from datetime import datetime
 import base64
 
 BIRTHDAY_PERSON = "Mahi"
-IMAGE_FILE = "february-13-2019-nebula-sharpless-2-106"
+IMAGE_FILE = "february-13-2019-nebula-sharpless-2-106.jpg"
 SONG_URL = "song.mp3"
 
 
