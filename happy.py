@@ -77,59 +77,104 @@ if st.session_state.play_song:
     
     time.sleep(5)  # Allow some time for the audio to start
 
-    st.markdown("## 🎤 Some words for the birthday girl")
-    styled_message = f"""
+    # st.markdown("## 🎤 Some words for the birthday girl")
+    st.markdown(f"""
     <style>
-    /* Make entire page smoother */
-    .main {{
-        background-color: #0e1117;
+
+    body {{
+        background: linear-gradient(135deg, #0f172a, #1e293b);
     }}
 
-    /* Birthday card container */
-    .birthday-card {{
-        font-family: 'Georgia', serif;
+    /* Floating hearts */
+    @keyframes floatUp {{
+        0% {{ transform: translateY(0) scale(1); opacity: 1; }}
+        100% {{ transform: translateY(-800px) scale(1.5); opacity: 0; }}
+    }}
+
+    .heart {{
+        position: fixed;
+        bottom: -20px;
         font-size: 20px;
-        line-height: 1.8;
-        color: #ffffff;
-        background: linear-gradient(135deg, #1f1c2c, #302b63, #24243e);
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-        text-align: justify;
-        margin-top: 20px;
+        animation: floatUp 8s linear infinite;
+        color: #ff4d6d;
     }}
 
-    /* Highlight lines */
-    .highlight {{
-        font-size: 26px;
-        font-weight: bold;
-        background: linear-gradient(90deg, #ff9a9e, #fad0c4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: block;
-        text-align: center;
-        margin: 25px 0;
+    .heart:nth-child(1) {{ left: 10%; animation-delay: 0s; }}
+    .heart:nth-child(2) {{ left: 25%; animation-delay: 2s; }}
+    .heart:nth-child(3) {{ left: 40%; animation-delay: 4s; }}
+    .heart:nth-child(4) {{ left: 60%; animation-delay: 1s; }}
+    .heart:nth-child(5) {{ left: 75%; animation-delay: 3s; }}
+    .heart:nth-child(6) {{ left: 90%; animation-delay: 5s; }}
+
+    /* Premium card */
+    .love-card {{
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 0 40px rgba(255, 105, 180, 0.3);
+        animation: fadeIn 2s ease-in-out;
+        color: white;
+        line-height: 1.8;
+        font-size: 17px;
     }}
+
+    @keyframes fadeIn {{
+        from {{ opacity: 0; transform: translateY(30px); }}
+        to {{ opacity: 1; transform: translateY(0); }}
+    }}
+
+    /* Glow text */
+    .glow {{
+        color: #ff99cc;
+        font-weight: 600;
+        text-shadow: 0 0 10px #ff4da6,
+                    0 0 20px #ff1a8c,
+                    0 0 30px #ff0066;
+    }}
+
+    .title-glow {{
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 15px;
+        text-shadow: 0 0 15px #ff4da6;
+    }}
+
     </style>
 
-    <div class="birthday-card">
-        We’ve only met once, but that one meeting was enough to leave a really positive impression.  
-        There’s something genuinely kind and refreshing about your presence that’s hard to miss.
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💘</div>
+    <div class="heart">💞</div>
+    <div class="heart">💕</div>
+    <div class="heart">💓</div>
 
-        <span class="highlight">
-            On your birthday, I just want to wish you happiness that feels light, peaceful, and truly yours. ✨
-        </span>
+    <div class="love-card">
 
-        May this year bring you growth, success, good health, and moments that make you proud of how far you’re going.  
-        Keep smiling, keep shining, and keep being exactly who you are.
+    <div class="title-glow">💌 Some words for the birthday girl</div>
 
-        <span class="highlight">
-            🎂 Happy Birthday, {BIRTHDAY_PERSON}! 🌸
-        </span>
+    <p>
+    We’ve only met once, but that one meeting was enough to leave a really positive impression.
+    There’s something genuinely kind and refreshing about your presence that’s hard to miss.
+    </p>
+
+    <p class="glow">
+    On your birthday, I just want to wish you happiness that feels light, peaceful, and truly yours. ✨
+    </p>
+
+    <p>
+    May this year bring you growth, success, good health, and moments that make you proud of how far you’re going.
+    Keep smiling, keep shining, and keep being exactly who you are.
+    </p>
+
+    <p class="glow" style="text-align:center; font-size:20px;">
+    🎂 Happy Birthday, {BIRTHDAY_PERSON}! 🌸
+    </p>
+
     </div>
-    """
+    """, unsafe_allow_html=True)
 
-    st.markdown(styled_message, unsafe_allow_html=True)
 
     colA, colB = st.columns(2)
     with colA:
